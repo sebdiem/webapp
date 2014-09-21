@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script type="text/javascript" src="../static/table.js"> </script>
+        <meta charset="utf-8" />
+		<title>test_appli</title>
+	</head>
+	<body>
+            <div id="variable">
+                Variable:&nbsp; &nbsp;  
+                <select name='inputColumns' onChange="ask_column(this.value);"></select>
+            </div>
+            <div id="content">
+                <table  id="thetable" border="1">
+                    <tr>
+                        <th>Value</th>
+                        <th>Count</th>
+                        <th>Average age</th> 
+                    </tr>
+                </table>
+                <div id="ignored"></div>
+            </div>
+        </body>
+</html>
