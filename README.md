@@ -18,7 +18,8 @@ The webapplication is available in a web browser at [http://localhost:5000/datai
 The webserver provides an API to access two resources:
 - the list of columns in the database through `dataiku/columns`
 * some statistics on a given column `column_name` through `dataiku/columns/column_name`
-The server sends back the data in `json` format.
-### Clien side:
+The server sends back the data in `json` format. 
+
+### Client side:
 The client javascript application starts by asking for the list of columns.
 Then, the user can ask for statistics on a given column by selecting the column in the list.
