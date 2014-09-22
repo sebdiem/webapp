@@ -15,7 +15,7 @@ function ask_column(column) {
         type: "GET",
         contentType: "application/json"
     }).done(function(json) {
-        $('#thetable tr').not(':first').not(':last').remove();
+        $('#thetable tr').not(':first').remove();
         var html = '';
         for(var i = 0; i < json['column'].length; i++)
                     html += '<tr><td>' + json['column'][i]['value'] + 
