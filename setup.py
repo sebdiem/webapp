@@ -7,10 +7,21 @@
 """
 Setup
 """
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+from setuptools import setup
+from setuptools.command.install import install
+
+
+URL = "http://dev.dataiku.com/~cstenac/dev-recruiting/us-census.db.gz"
+LOCAL = "resources/us-census.db.gz"
+LOCAL_EXTRACT = "resources/us-census.db"
+
+class MyInstall(install):
+    def run(self):
+        install.run(self)
+        import urllib
+        urllib.urlretrieve(URL, LOCAL)
+        from subprocess import call
+        call(['gunzip', LOCAL])
 
 config = {
     'description': 'A web application querying a database',
@@ -22,7 +33,8 @@ config = {
     'install_requires': ['flask'],
     'packages': ['webapp'],
     'scripts': [],
-    'name': 'webapp'
+    'name': 'webapp',
+    'cmdclass': {'install': MyInstall}
 }
 
 setup(**config)

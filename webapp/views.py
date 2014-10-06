@@ -3,7 +3,7 @@ import sqlite3
 
 from webapp import app
 
-DB_PATH = 'webapp/resources/us-census.db'
+DB_PATH = 'resources/us-census.db'
 TABLE = 'census_learn_sql'
 MAX_NUM_OF_VALUES = 100
 
@@ -16,6 +16,7 @@ def set_row_factory():
     db.row_factory = my_row_factory
 
 def connect_to_database():
+    import os
     return sqlite3.connect(DB_PATH)
 
 def get_db():
